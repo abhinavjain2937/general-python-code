@@ -1,0 +1,24 @@
+def decode_string(s):
+    stack = []
+    num = 0
+    current_str = ""
+
+    for char in s:
+        if char.isdigit():
+            num = num * 10 + int(char)
+        elif char == '[':
+            stack.append((current_str,num))
+
+            current_str = ""
+            num = 0
+        elif char == ']':
+            prev_str , repeat_times = stack.pop()
+            current_str = prev_str + (current_str * repeat_times)
+        else:
+            current_str += char
+    return current_str
+
+
+input_string = input(f"Insert your string : ")
+decoded_string = decode_string(input_string)
+print(f"Decoded string: {decoded_string}")
