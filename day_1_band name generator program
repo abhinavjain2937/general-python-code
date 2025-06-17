@@ -1,0 +1,11 @@
+# creating a band name generator program 
+# print(len(input("enter your name: ")))
+ # creating a band name generator program
+#frist we take a input of your home stste
+city = input("enter your city name: ")
+# now we are taken your input about faveroutite pet
+pet = input("enter your favourite pet name:")
+#now we are putting together the band name
+band_name =  city + " "+ pet +"'s"
+
+print(band_name)
