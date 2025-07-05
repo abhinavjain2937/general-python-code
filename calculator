@@ -1,0 +1,47 @@
+# creating a calculator
+def add(n1,n2):
+    return n1 +n2  
+
+def subtract (n1,n2):
+    return n1-n2
+
+def multiplication (n1,n2):
+    return n1*n2
+
+def division(n1,n2):
+    return n1/n2
+
+operations = {
+    "+": add,
+    "-": subtract,
+    "*": multiplication,
+    "/": division
+}
+def calculator():
+
+    num_1 = float(input(" What is the frist number: "))
+
+
+    for symbol in operations:
+        print(symbol)
+
+    should_coninue = True
+
+
+    while should_coninue:
+        
+        operation_symbol = input("pick an operation bfrom above line: ")
+        num_2 = float(input(" What is the second number: "))
+        calculation_function = operations[operation_symbol]
+        answer = calculation_function(num_1,num_2)
+        print(f"{num_1} {operation_symbol} {num_2} = {answer}")
+
+        if input(f"Type 'y' to continue calculation with {answer}, or type 'n' to start a new calculation : ") =="y":
+            num_1 = answer
+        else:
+            should_coninue = False
+            calculator()
+
+
+calculator()
+    
